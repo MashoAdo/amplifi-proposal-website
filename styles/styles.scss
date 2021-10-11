@@ -1,0 +1,330 @@
+// import poppins fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+html {
+	scroll-behavior: smooth;
+}
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+
+// font weight
+$font-weights: (
+	"light": 300,
+	"medium": 400,
+	"semi-bold": 500,
+	"bold": 700,
+);
+
+// color
+$Light-blue: hsl(184, 49%, 41%);
+$Light-blue-hover: hsl(184, 57%, 34%);
+$Hover-blue: hsl(185, 61%, 16%);
+$Testimonial: hsl(220, 38%, 97%);
+$Dark-blue: hsl(227, 40%, 25%);
+
+// mixins
+@mixin flexDirection($direction, $justify) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: center;
+}
+// ====================body styling==================
+body {
+	font-family: "Poppins", sans-serif;
+}
+.menu-header {
+	@include flexDirection(row, space-between);
+	padding: 1rem;
+	color: $Light-blue;
+}
+
+.menu-btn {
+	font-size: 2.5rem;
+	color: $Light-blue;
+	// display: none;
+}
+
+.logo {
+	font-size: 2rem;
+	font-weight: map-get($font-weights, "semi-bold");
+	font-family: "Poppins", sans-serif;
+}
+
+//===================menu==================
+@media screen and (max-width: 768px) {
+	.nav-menu {
+		background: $Dark-blue;
+		color: #ffffff;
+		position: absolute;
+		top: -100vh;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+	}
+}
+.nav-menu {
+	z-index: 20;
+	transition: top 0.3s ease-in;
+}
+
+.show-menu {
+	top: 0;
+}
+.close-logo {
+	color: #ffffff;
+	font-size: 2rem;
+	font-weight: map-get($font-weights, "semi-bold");
+	font-family: "Poppins", sans-serif;
+}
+.close-menu {
+	font-size: 2rem;
+	color: #ffffff;
+}
+
+.menu-items {
+	text-align: center;
+	list-style: none;
+}
+.nav-link {
+	a {
+		margin-bottom: 3rem;
+		color: #ffffff;
+		font-size: 1.2rem;
+		font-family: "Poppins", sans-serif;
+		text-decoration: none;
+	}
+}
+
+// home page
+
+.home-page {
+	height: 90vh;
+	background-image: url(../homeBG.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	@include flexDirection(column, center);
+	color: #ffffff;
+	text-align: center;
+	padding: 0 2rem;
+	position: relative;
+	font-family: "Poppins", sans-serif;
+
+	h2 {
+		margin-bottom: 2rem;
+	}
+	p {
+		color: #ffffff;
+		margin-bottom: 3rem;
+	}
+}
+
+.home-footer-right {
+	position: absolute;
+	bottom: 2rem;
+	right: 2rem;
+}
+
+.explore-button {
+	border: none;
+	border-radius: 5px;
+	background: $Light-blue;
+	color: #ffffff;
+	padding: 1rem 2rem;
+
+	&:hover {
+		background: $Light-blue-hover;
+		color: #ffffff;
+		transition: top 0.3s ease-in;
+	}
+}
+
+// how it works
+.howItWorks {
+	@include flexDirection(column, center);
+	padding: 4rem 2rem;
+	font-family: "Poppins", sans-serif;
+
+	ol {
+		li {
+			margin: 2rem;
+		}
+	}
+}
+
+.h3Heading {
+	color: $Light-blue;
+	text-align: center;
+	font-family: "Poppins", sans-serif;
+}
+
+// frequently asked questions
+.faq {
+	@include flexDirection(column, center);
+}
+.question {
+	padding: 4rem 1rem;
+}
+.questionContainer {
+	@include flexDirection(row, space-between);
+	margin-bottom: 2rem;
+	color: $Light-blue;
+	font-size: 1.3rem;
+	border-bottom: 2px solid #ebebeb;
+	padding-bottom: 1rem;
+	cursor: pointer;
+	font-family: "Poppins", sans-serif;
+}
+
+// Testiomonials
+.carousel-item {
+	padding: 2rem;
+	font-family: "Poppins", sans-serif;
+	background-color: hsl(180, 75%, 97%);
+}
+.carousel-button {
+	height: 2px;
+}
+
+.personalInfo-container {
+	@include flexDirection(row, flex-start);
+	margin-bottom: 1rem;
+	img {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	}
+}
+
+.personalInfo {
+	margin-left: 1rem;
+}
+
+.social-info {
+	@include flexDirection(row, space-between);
+}
+.information-article {
+	a {
+		text-decoration: none;
+		color: $Light-blue;
+	}
+}
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+	filter: invert(100%);
+}
+
+// personalities
+.personalities-container {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+}
+.personalities {
+	padding: 2rem;
+	font-family: "Poppins", sans-serif;
+	text-align: center;
+}
+
+.personality {
+	img {
+		width: 200px;
+		height: 200px;
+	}
+	span {
+		font-weight: map-get($font-weights, "bold");
+	}
+}
+
+// Celebrities in crypto
+.celebrities-in-crypto {
+	width: 100%;
+}
+.celebrities {
+	@include flexDirection(row, space-around);
+	font-family: "Poppins", sans-serif;
+	width: 100%;
+	span {
+		font-weight: map-get($font-weights, "semi-bold");
+		margin-bottom: 0.5rem;
+	}
+}
+.celebritiesG1,
+.celebritiesG2 {
+	@include flexDirection(column, center);
+	text-align: start;
+}
+// links
+.route {
+	margin: 2rem;
+	width: 100%;
+	@include flexDirection(row, space-around);
+}
+.route-link {
+	border-radius: 5px;
+	background: $Light-blue;
+	color: #ffffff;
+	padding: 1rem;
+	text-decoration: none;
+	font-family: "Poppins", sans-serif;
+
+	&:hover {
+		background: $Light-blue-hover;
+		transition: top 0.3s ease-in;
+		color: #ffffff;
+	}
+}
+
+footer {
+	background: $Light-blue;
+	color: #ffffff;
+	height: 200px;
+	@include flexDirection(column, center);
+}
+
+//media Queries
+@media screen and (min-width: 550px) {
+	.testimonials {
+		@include flexDirection(column, center);
+	}
+	.carousel {
+		max-width: 800px;
+	}
+	.carousel-inner {
+		align-content: center;
+		max-width: 800px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	nav {
+		@include flexDirection(row, space-between);
+		padding: 0 5rem;
+	}
+	.menu-items {
+		@include flexDirection(row, space-between);
+	}
+	.menu-btn,
+	.nav-menu > .menu-header {
+		display: none;
+	}
+	.nav-link > a {
+		color: $Light-blue;
+	}
+	.personalities-container {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 30px;
+	}
+
+	.questionContainer {
+		width: 800px;
+	}
+}
