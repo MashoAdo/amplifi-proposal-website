@@ -39,7 +39,7 @@ $Dark-blue: hsl(227, 40%, 25%);
 }
 // ====================body styling==================
 body {
-	font-family: "Poppins", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 .menu-header {
 	@include flexDirection(row, space-between);
@@ -254,7 +254,7 @@ body {
 }
 .celebrities {
 	@include flexDirection(row, space-around);
-	font-family: "Poppins", sans-serif;
+	font-family: "Roboto", sans-serif;
 	width: 100%;
 	span {
 		font-weight: map-get($font-weights, "semi-bold");

@@ -17,7 +17,7 @@ a {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .menu-header {
@@ -330,7 +330,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   width: 100%;
 }
 
